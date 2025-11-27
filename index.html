@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="res/bootstrap/css/bootstrap.css">
+  	<link rel="stylesheet" href="res/fontawesome/css/all.css">
+  	<link rel="stylesheet" href="res/css/style.css">
+</head>
+<body>
+<style>
+   body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      /*background-color: rgb(213, 112, 19);*/
+   } 
+   .timer {
+      text-align: center;
+      font-size: 60px; 
+      margin-top: 0px;
+      color: black;
+      /*background-color:rgb(6, 6, 1);*/ 
+      font-family: dancing-script;
+      color: rgb(218, 148, 29);
+   }   
+</style>
+</head>
+<body>
+
+  <!-- Image and text -->
+<nav class="navbar navbar-light bg-dark">
+  <a class="navbar-brand" href="#">
+    <img src="images/meal.png" width="100" height="auto" class="d-inline-block align-top" alt="">
+  </a>
+  <h5 class="mr-auto"><span class="me">Meal</span><span class="be">Box</span></h5>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+      <div class="col-sm-6">
+        <h1 class="mb-4 by" style="font-family: dancing-script">Buy Me Food</h1>
+        <ol>
+          <i class="fab fa-hotjar icon"> <span class="fi">Order For Food / Snacks</span></i> <br><br>
+          <i class="fab fa-hotjar icon"> <span class="fi">100% Delivery at your comfort zone</span></i>
+        </ol>
+      </div>
+       <div class="col-sm-6 mt-5">
+        <img src="images/bike.png" style="width: 350px">
+      </div>
+  </div>
+</div>
+
+<h2 class="timer mt-5"></h2>
+<script>
+   var countDownDate = new Date("April 3, 2021 00:00:00").getTime(); 
+   var timeClear = setInterval(function() {
+      var now = new Date().getTime();
+      var timeLeft = countDownDate - now;
+      var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+         (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      document.querySelector(".timer").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+      if (timeLeft < 0) {
+         clearInterval(timeClear);
+         document.querySelector(".timer").innerHTML = "Timer Finished";
+      }
+   }, 1000);
+</script>
+
+<div class="container">
+	<div class="row text-center mt-5">
+		<div class="col-sm-12">
+			<h1 style="font-family:dancing-script">Delivery Hours</h1>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="row text-center mt-5">
+		<div class="col-sm-6 mb-4">
+			<h1 style="font-family:dancing-script">8:00am - 9:30am</h1>
+			<h4 style="font-family:dancing-script">Morning</h4>
+		</div>
+		<div class="col-sm-6">
+			<h1 style="font-family:dancing-script">12:00pm - 1:30pm</h1>
+			<h4 style="font-family:dancing-script">Afternoon</h4>
+		</div>
+	</div>
+</div>
+	
+	<div class="container text-center mt-1 mb-2">
+		<button type="button" class="btn btn-outline-info"><a href="https://wa.me/message/MK4Y3X7NHRITI1"><i class="fab fa-whatsapp nav-link text-dark"> Contact US</a></i></button>
+	</div>
+</body>
+</html>
+
+
+	<footer class="bg-light text-center text-lg-start">
+  <!-- Copyright -->
+  <div class="text-center p-3 text-light" style="background-color: black;">
+    © 2021 Copyright:
+    <a class="text-light" href="#">POWERED BY CHAMBER-TECH</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+	<script type="text/javascript" src="res/bootstrap/js/popper.js"></script>
+    <script type="text/javascript" src="res/bootstrap/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap/js/bootstrap.js"></script>
+    <script src="res/js/app.js"></script>
+</body>
+</html>
